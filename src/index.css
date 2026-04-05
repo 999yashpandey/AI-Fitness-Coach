@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+
+/* Stickman animations */
+@keyframes squat-movement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@keyframes deadlift-movement {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-15deg); }
+}
+@keyframes bench-movement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes pullup-movement {
+  0%, 100% { transform: translateY(10px); }
+  50% { transform: translateY(0); }
+}
+@keyframes pushup-movement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+@keyframes lunge-movement {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-3px); }
+}
+@keyframes row-movement {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+@keyframes press-movement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes dip-movement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-squat-head,
+.animate-squat-leg-left,
+.animate-squat-leg-right { animation: squat-movement 2s ease-in-out infinite; }
+.animate-deadlift-head,
+.animate-deadlift-body { animation: deadlift-movement 2.5s ease-in-out infinite; transform-origin: center; }
+.animate-bench-arm-left,
+.animate-bench-arm-right,
+.animate-bench-bar { animation: bench-movement 2s ease-in-out infinite; }
+.animate-pullup-head,
+.animate-pullup-body { animation: pullup-movement 2.5s ease-in-out infinite; }
+.animate-pushup-head,
+.animate-pushup-arm-left,
+.animate-pushup-arm-right { animation: pushup-movement 2s ease-in-out infinite; }
+.animate-plank-body { animation: pushup-movement 3s ease-in-out infinite; }
+.animate-lunge-leg-front { animation: lunge-movement 2s ease-in-out infinite; }
+.animate-row-body,
+.animate-row-arm-left,
+.animate-row-arm-right { animation: row-movement 2s ease-in-out infinite; }
+.animate-press-arm-left,
+.animate-press-arm-right,
+.animate-press-bar { animation: press-movement 2s ease-in-out infinite; }
+.animate-dip-head,
+.animate-dip-body { animation: dip-movement 2s ease-in-out infinite; }
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 1.5s ease-out infinite; }
