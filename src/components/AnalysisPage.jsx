@@ -71,7 +71,7 @@ export default function AnalysisPage({ setPage, fileInputRef, triggerUpload }) {
       const reader = new FileReader();
       reader.onload = async (e) => {
         try {
-          const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`, {
+          const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -84,6 +84,7 @@ export default function AnalysisPage({ setPage, fileInputRef, triggerUpload }) {
             })
           });
           const data = await res.json();
+        
           const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
           const m = text.match(/\{[\s\S]*\}/);
           if (m) setLiveAnalysis(JSON.parse(m[0]));

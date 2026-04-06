@@ -35,7 +35,7 @@ app.post("/chat", async (req, res) => {
     }
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-pro-latest"
+      model: "gemini-3-flash-preview" // Use the latest Gemini model
     });
 
     const result = await model.generateContent(message);

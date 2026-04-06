@@ -105,7 +105,7 @@ export default function App() {
         const prompt = type === "machine"
           ? `You are an expert fitness coach. Analyze this gym equipment image and respond ONLY with valid JSON:\n{"equipment":"name","muscles":["m1"],"secondaryMuscles":["m1"],"usage":"step-by-step","repsAndSets":"recommended","safetyTips":["tip"],"commonMistakes":["mistake"],"difficulty":"Beginner/Intermediate/Advanced"}`
           : `You are an expert personal trainer. Analyze this exercise form and respond ONLY with valid JSON:\n{"exercise":"name","overallForm":"Excellent/Good/Needs Improvement/Poor","correctAspects":["c"],"issues":["i"],"corrections":["c"],"injuryRisks":["r"],"score":85,"motivationalTip":"message"}`;
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`, {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
